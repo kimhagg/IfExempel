@@ -34,7 +34,6 @@
                     Console.WriteLine("Ogiltigt val. Välj 1, 2 eller 3.");
                     skeppsVal = 0;
                 }
-                
             }
             return "Något gick fel, starta om programmet för att välja skepp.";
         }
