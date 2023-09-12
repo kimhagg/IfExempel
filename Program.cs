@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            string rymdSkepp = "";
+            string rymdSkepp = ""; //initialize spaceship name variable
+
+            //Check password and age before letting user select spaceship
             if (PasswordCheck() && AgeCheck()) {
                 rymdSkepp = ValjSkepp();
                 Console.WriteLine("Du valde " + rymdSkepp + "!");
@@ -13,7 +15,9 @@
 
         private static string ValjSkepp()
         {
-            byte skeppsVal = 0;
+            byte skeppsVal = 0; //initialize spaceship selection
+
+            //while loop that selects the ship and complains if you try to mess around with incorrect selections
             while (skeppsVal == 0){ 
                 Console.Write("Vilket skepp vill du välja? (1, 2 eller 3): ");
                 skeppsVal = Convert.ToByte(Console.ReadLine());
@@ -35,16 +39,21 @@
                     skeppsVal = 0;
                 }
             }
+
+            //returns error message if while loop somehow doesn't start
             return "Något gick fel, starta om programmet för att välja skepp.";
         }
 
         static bool PasswordCheck()
         {
-            string korrektLosenord = "MayThe4rth";
+            string korrektLosenord = "MayThe4rth"; //The worst secured password in the universe
 
+
+            //ask user for password entry then save in variable
             Console.Write("Skriv in ditt Lösenord: ");
             string anvandarensLosenord = Console.ReadLine();
 
+            //check if user entered right password or not
             if (anvandarensLosenord == korrektLosenord)
             {
                 Console.WriteLine("Välkommen, Jedi-mästare!");
@@ -59,11 +68,13 @@
 
         static bool AgeCheck()
         {
-            byte minAlder = 18;
+            byte minAlder = 18; //minimum age
 
+            //Get users age from input
             Console.Write("Skriv in din ålder: ");
             byte anvandaresAlder = Convert.ToByte(Console.ReadLine());
 
+            //Check if users age is old enough to drive spaceships
             if (anvandaresAlder >= minAlder)
             {
                 Console.WriteLine("Du är gammal nog att köra rymdskepp!");
