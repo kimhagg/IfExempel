@@ -11,7 +11,35 @@
                 rymdSkepp = ValjSkepp();
                 Console.WriteLine("Du valde " + rymdSkepp + "!");
             }
+            JediTraning();
         }
+
+        private static void JediTraning()
+        {
+            //Take information from user to check how their test went
+            Console.Write("Vilken svårighetsgrad tränade du på? (Lätt, Medel, Svår) ");
+            string svarighetsGrad = Console.ReadLine();
+
+            Console.Write("Hur lång tid tog det att avsluta träningen i sekunder? ");
+            int tid = Convert.ToInt32(Console.ReadLine());
+
+            //Based on user input, test how they did and reply back in console.
+            if (svarighetsGrad == "Lätt" && tid <= 10)
+            {
+                Console.WriteLine("Du är en lovande Padawan!");
+            } 
+            else if (svarighetsGrad == "Medel" && tid <= 20)
+            {
+                Console.WriteLine("Du är på rätt väg, unga Jedi!");
+            } 
+            else if (svarighetsGrad == "Svår" && tid <= 30)
+            {
+                Console.WriteLine("Mästerlig prestation, Jedi-mästare!");
+            }
+            else {
+                Console.WriteLine("Försök igen, kraften är med dig.");
+            }
+         }
 
         private static string ValjSkepp()
         {
